@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="Northstar — Portfolio intelligence for everyday investors">
+  <defs>
+    <!-- Backdrop gradient: cream paper into dusk forest -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#F4EFE6"/>
+      <stop offset="55%" stop-color="#E5DDC9"/>
+      <stop offset="100%" stop-color="#1B2A1F"/>
+    </linearGradient>
+    <!-- Soft star glow -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#F4D38A" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#C99E4D" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#C99E4D" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Title gradient: forest to brass -->
+    <linearGradient id="titleFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#1B2A1F"/>
+      <stop offset="55%"  stop-color="#2F5D3F"/>
+      <stop offset="100%" stop-color="#A6792E"/>
+    </linearGradient>
+    <!-- Drop shadow for "3D" lift on the title -->
+    <filter id="lift" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+      <feOffset dx="0" dy="4" result="offset"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Sparkle marks -->
+    <g id="sparkle">
+      <path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2 Z" fill="#F4D38A"/>
+    </g>
+    <!-- Animated equity curve -->
+    <linearGradient id="curve" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2F5D3F" stop-opacity="0.0"/>
+      <stop offset="20%" stop-color="#2F5D3F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#A6792E" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="360" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines for that "data" texture -->
+  <g stroke="#0E1B2C" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="60"  x2="1280" y2="60"/>
+    <line x1="0" y1="120" x2="1280" y2="120"/>
+    <line x1="0" y1="180" x2="1280" y2="180"/>
+    <line x1="0" y1="240" x2="1280" y2="240"/>
+    <line x1="0" y1="300" x2="1280" y2="300"/>
+  </g>
+
+  <!-- Right-side glow disc -->
+  <circle cx="1080" cy="180" r="280" fill="url(#glow)"/>
+
+  <!-- Equity curve (decorative, suggests a portfolio rising) -->
+  <path d="M0,260 C 120,240 200,250 300,210 S 480,150 600,140 S 820,120 960,80 S 1180,55 1280,40"
+        fill="none" stroke="url(#curve)" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Faded mirror cone (Monte Carlo vibes) -->
+  <path d="M0,290 C 120,275 220,275 320,245 S 500,205 620,200 S 850,180 1000,148 S 1190,130 1280,118
+           L 1280,162 C 1190,174 1000,192 850,222 S 620,244 500,249 S 220,319 120,319 L 0,334 Z"
+        fill="#2F5D3F" fill-opacity="0.07"/>
+
+  <!-- Sparkles around the title -->
+  <g transform="translate(110,90)"><use href="#sparkle"/></g>
+  <g transform="translate(85,225) scale(0.7)"><use href="#sparkle"/></g>
+  <g transform="translate(540,75) scale(0.6)"><use href="#sparkle"/></g>
+
+  <!-- Northstar logomark: 4-point star with tilt -->
+  <g transform="translate(120,180)">
+    <path d="M0,-78 L11,-13 L78,0 L11,13 L0,78 L-11,13 L-78,0 L-11,-13 Z"
+          fill="url(#titleFill)" filter="url(#lift)"/>
+    <circle cx="0" cy="0" r="6.5" fill="#F4EFE6"/>
+  </g>
+
+  <!-- Big italic serif title -->
+  <g filter="url(#lift)">
+    <text x="240" y="180"
+          font-family="Georgia, 'Iowan Old Style', 'Hoefler Text', serif"
+          font-size="98" font-style="italic" font-weight="500"
+          fill="url(#titleFill)" letter-spacing="-1.5">
+      Northstar
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="240" y="225"
+        font-family="ui-sans-serif, -apple-system, 'SF Pro Display', 'Inter', system-ui, sans-serif"
+        font-size="20" fill="#1B2A1F" fill-opacity="0.78" letter-spacing="0.3">
+    Portfolio intelligence for everyday investors.
+  </text>
+
+  <!-- Sub line in mono -->
+  <text x="240" y="258"
+        font-family="ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace"
+        font-size="13" fill="#1B2A1F" fill-opacity="0.55" letter-spacing="0.5">
+    LIVE PRICES · STRESS TESTING · MPT OPTIMIZATION · MONTE CARLO PROJECTION
+  </text>
+
+  <!-- Bottom-right tagline mark -->
+  <g transform="translate(1148,318)" font-family="ui-monospace, monospace" font-size="11" fill="#F4EFE6" fill-opacity="0.7">
+    <text text-anchor="end">v1.0 · MIT</text>
+  </g>
+</svg>
