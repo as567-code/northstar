@@ -444,7 +444,7 @@ function ProjectionChart({ result, startValue }: { result: OptimizationResult; s
     ...spyBacktest, ...spyFwd.p5, ...spyFwd.p95,
   ].filter(Number.isFinite);
   const sorted = allValues.slice().sort((a, b) => a - b);
-  const yLo = sorted[Math.floor(0.01 * sorted.length)] ?? startValue * 0.5;
+  const yLo = Math.min(sorted[Math.floor(0.01 * sorted.length)] ?? startValue * 0.5, startValue * 0.25);
   const yHi = sorted[Math.floor(0.99 * sorted.length)] ?? startValue * 2;
 
   function xPos(i: number) { return PAD_L + (i / Math.max(1, totalLen - 1)) * innerW; }
